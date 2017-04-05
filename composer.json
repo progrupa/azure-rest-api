@@ -11,6 +11,9 @@
     "license": "proprietary",
     "authors": [
         {
+            "name": "Dominik Kasprzak"
+        },
+        {
             "name": "Swagger and contributors",
             "homepage": "https://github.com/swagger-api/swagger-codegen"
         }
