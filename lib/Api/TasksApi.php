@@ -102,7 +102,7 @@ class TasksApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function taskAdd($job_id, $task, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function taskAdd($job_id, $task, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->taskAddWithHttpInfo($job_id, $task, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -123,7 +123,7 @@ class TasksApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function taskAddWithHttpInfo($job_id, $task, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function taskAddWithHttpInfo($job_id, $task, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'job_id' is set
         if ($job_id === null) {
@@ -232,7 +232,7 @@ class TasksApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\TaskAddCollectionResult
      */
-    public function taskAddCollection($job_id, $task_collection, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function taskAddCollection($job_id, $task_collection, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->taskAddCollectionWithHttpInfo($job_id, $task_collection, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -253,7 +253,7 @@ class TasksApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\TaskAddCollectionResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function taskAddCollectionWithHttpInfo($job_id, $task_collection, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function taskAddCollectionWithHttpInfo($job_id, $task_collection, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'job_id' is set
         if ($job_id === null) {
@@ -370,7 +370,7 @@ class TasksApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function taskDelete($job_id, $task_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function taskDelete($job_id, $task_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->taskDeleteWithHttpInfo($job_id, $task_id, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -395,7 +395,7 @@ class TasksApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function taskDeleteWithHttpInfo($job_id, $task_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function taskDeleteWithHttpInfo($job_id, $task_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'job_id' is set
         if ($job_id === null) {
@@ -529,7 +529,7 @@ class TasksApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\CloudTask
      */
-    public function taskGet($job_id, $task_id, $api_version, $select = null, $expand = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function taskGet($job_id, $task_id, $api_version = Version::NAME, $select = null, $expand = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->taskGetWithHttpInfo($job_id, $task_id, $api_version, $select, $expand, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -556,7 +556,7 @@ class TasksApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\CloudTask, HTTP status code, HTTP response headers (array of strings)
      */
-    public function taskGetWithHttpInfo($job_id, $task_id, $api_version, $select = null, $expand = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function taskGetWithHttpInfo($job_id, $task_id, $api_version = Version::NAME, $select = null, $expand = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'job_id' is set
         if ($job_id === null) {
@@ -699,7 +699,7 @@ class TasksApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\CloudTaskListResult
      */
-    public function taskList($job_id, $api_version, $filter = null, $select = null, $expand = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function taskList($job_id, $api_version = Version::NAME, $filter = null, $select = null, $expand = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->taskListWithHttpInfo($job_id, $api_version, $filter, $select, $expand, $maxresults, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -723,7 +723,7 @@ class TasksApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\CloudTaskListResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function taskListWithHttpInfo($job_id, $api_version, $filter = null, $select = null, $expand = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function taskListWithHttpInfo($job_id, $api_version = Version::NAME, $filter = null, $select = null, $expand = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'job_id' is set
         if ($job_id === null) {
@@ -851,7 +851,7 @@ class TasksApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\CloudTaskListSubtasksResult
      */
-    public function taskListSubtasks($job_id, $task_id, $api_version, $select = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function taskListSubtasks($job_id, $task_id, $api_version = Version::NAME, $select = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->taskListSubtasksWithHttpInfo($job_id, $task_id, $api_version, $select, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -873,7 +873,7 @@ class TasksApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\CloudTaskListSubtasksResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function taskListSubtasksWithHttpInfo($job_id, $task_id, $api_version, $select = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function taskListSubtasksWithHttpInfo($job_id, $task_id, $api_version = Version::NAME, $select = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'job_id' is set
         if ($job_id === null) {
@@ -997,7 +997,7 @@ class TasksApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function taskReactivate($job_id, $task_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function taskReactivate($job_id, $task_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->taskReactivateWithHttpInfo($job_id, $task_id, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -1022,7 +1022,7 @@ class TasksApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function taskReactivateWithHttpInfo($job_id, $task_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function taskReactivateWithHttpInfo($job_id, $task_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'job_id' is set
         if ($job_id === null) {
@@ -1154,7 +1154,7 @@ class TasksApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function taskTerminate($job_id, $task_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function taskTerminate($job_id, $task_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->taskTerminateWithHttpInfo($job_id, $task_id, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -1179,7 +1179,7 @@ class TasksApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function taskTerminateWithHttpInfo($job_id, $task_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function taskTerminateWithHttpInfo($job_id, $task_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'job_id' is set
         if ($job_id === null) {
@@ -1312,7 +1312,7 @@ class TasksApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function taskUpdate($job_id, $task_id, $task_update_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function taskUpdate($job_id, $task_id, $task_update_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->taskUpdateWithHttpInfo($job_id, $task_id, $task_update_parameter, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -1338,7 +1338,7 @@ class TasksApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function taskUpdateWithHttpInfo($job_id, $task_id, $task_update_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function taskUpdateWithHttpInfo($job_id, $task_id, $task_update_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'job_id' is set
         if ($job_id === null) {

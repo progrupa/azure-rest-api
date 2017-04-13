@@ -102,7 +102,7 @@ class AccountsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\AccountListNodeAgentSkusResult
      */
-    public function accountListNodeAgentSkus($api_version, $filter = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function accountListNodeAgentSkus($api_version = Version::NAME, $filter = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->accountListNodeAgentSkusWithHttpInfo($api_version, $filter, $maxresults, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -123,7 +123,7 @@ class AccountsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\AccountListNodeAgentSkusResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function accountListNodeAgentSkusWithHttpInfo($api_version, $filter = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function accountListNodeAgentSkusWithHttpInfo($api_version = Version::NAME, $filter = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'api_version' is set
         if ($api_version === null) {

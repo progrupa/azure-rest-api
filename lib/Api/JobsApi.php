@@ -101,7 +101,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function jobAdd($job, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function jobAdd($job, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->jobAddWithHttpInfo($job, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -121,7 +121,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function jobAddWithHttpInfo($job, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function jobAddWithHttpInfo($job, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'job' is set
         if ($job === null) {
@@ -221,7 +221,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function jobDelete($job_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobDelete($job_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->jobDeleteWithHttpInfo($job_id, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -245,7 +245,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function jobDeleteWithHttpInfo($job_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobDeleteWithHttpInfo($job_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'job_id' is set
         if ($job_id === null) {
@@ -365,7 +365,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function jobDisable($job_id, $job_disable_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobDisable($job_id, $job_disable_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->jobDisableWithHttpInfo($job_id, $job_disable_parameter, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -390,7 +390,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function jobDisableWithHttpInfo($job_id, $job_disable_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobDisableWithHttpInfo($job_id, $job_disable_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'job_id' is set
         if ($job_id === null) {
@@ -518,7 +518,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function jobEnable($job_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobEnable($job_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->jobEnableWithHttpInfo($job_id, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -542,7 +542,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function jobEnableWithHttpInfo($job_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobEnableWithHttpInfo($job_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'job_id' is set
         if ($job_id === null) {
@@ -663,7 +663,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\CloudJob
      */
-    public function jobGet($job_id, $api_version, $select = null, $expand = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobGet($job_id, $api_version = Version::NAME, $select = null, $expand = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->jobGetWithHttpInfo($job_id, $api_version, $select, $expand, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -689,7 +689,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\CloudJob, HTTP status code, HTTP response headers (array of strings)
      */
-    public function jobGetWithHttpInfo($job_id, $api_version, $select = null, $expand = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobGetWithHttpInfo($job_id, $api_version = Version::NAME, $select = null, $expand = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'job_id' is set
         if ($job_id === null) {
@@ -815,7 +815,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\JobStatistics
      */
-    public function jobGetAllJobsLifetimeStatistics($api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function jobGetAllJobsLifetimeStatistics($api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->jobGetAllJobsLifetimeStatisticsWithHttpInfo($api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -834,7 +834,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\JobStatistics, HTTP status code, HTTP response headers (array of strings)
      */
-    public function jobGetAllJobsLifetimeStatisticsWithHttpInfo($api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function jobGetAllJobsLifetimeStatisticsWithHttpInfo($api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'api_version' is set
         if ($api_version === null) {
@@ -928,7 +928,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\CloudJobListResult
      */
-    public function jobList($api_version, $filter = null, $select = null, $expand = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function jobList($api_version = Version::NAME, $filter = null, $select = null, $expand = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->jobListWithHttpInfo($api_version, $filter, $select, $expand, $maxresults, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -951,7 +951,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\CloudJobListResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function jobListWithHttpInfo($api_version, $filter = null, $select = null, $expand = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function jobListWithHttpInfo($api_version = Version::NAME, $filter = null, $select = null, $expand = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'api_version' is set
         if ($api_version === null) {
@@ -1069,7 +1069,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\CloudJobListResult
      */
-    public function jobListFromJobSchedule($job_schedule_id, $api_version, $filter = null, $select = null, $expand = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function jobListFromJobSchedule($job_schedule_id, $api_version = Version::NAME, $filter = null, $select = null, $expand = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->jobListFromJobScheduleWithHttpInfo($job_schedule_id, $api_version, $filter, $select, $expand, $maxresults, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -1093,7 +1093,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\CloudJobListResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function jobListFromJobScheduleWithHttpInfo($job_schedule_id, $api_version, $filter = null, $select = null, $expand = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function jobListFromJobScheduleWithHttpInfo($job_schedule_id, $api_version = Version::NAME, $filter = null, $select = null, $expand = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'job_schedule_id' is set
         if ($job_schedule_id === null) {
@@ -1222,7 +1222,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\CloudJobListPreparationAndReleaseTaskStatusResult
      */
-    public function jobListPreparationAndReleaseTaskStatus($job_id, $api_version, $filter = null, $select = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function jobListPreparationAndReleaseTaskStatus($job_id, $api_version = Version::NAME, $filter = null, $select = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->jobListPreparationAndReleaseTaskStatusWithHttpInfo($job_id, $api_version, $filter, $select, $maxresults, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -1245,7 +1245,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\CloudJobListPreparationAndReleaseTaskStatusResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function jobListPreparationAndReleaseTaskStatusWithHttpInfo($job_id, $api_version, $filter = null, $select = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function jobListPreparationAndReleaseTaskStatusWithHttpInfo($job_id, $api_version = Version::NAME, $filter = null, $select = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'job_id' is set
         if ($job_id === null) {
@@ -1372,7 +1372,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function jobPatch($job_id, $job_patch_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobPatch($job_id, $job_patch_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->jobPatchWithHttpInfo($job_id, $job_patch_parameter, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -1397,7 +1397,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function jobPatchWithHttpInfo($job_id, $job_patch_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobPatchWithHttpInfo($job_id, $job_patch_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'job_id' is set
         if ($job_id === null) {
@@ -1526,7 +1526,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function jobTerminate($job_id, $api_version, $job_terminate_parameter = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobTerminate($job_id, $api_version = Version::NAME, $job_terminate_parameter = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->jobTerminateWithHttpInfo($job_id, $api_version, $job_terminate_parameter, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -1551,7 +1551,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function jobTerminateWithHttpInfo($job_id, $api_version, $job_terminate_parameter = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobTerminateWithHttpInfo($job_id, $api_version = Version::NAME, $job_terminate_parameter = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'job_id' is set
         if ($job_id === null) {
@@ -1676,7 +1676,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function jobUpdate($job_id, $job_update_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobUpdate($job_id, $job_update_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->jobUpdateWithHttpInfo($job_id, $job_update_parameter, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -1701,7 +1701,7 @@ class JobsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function jobUpdateWithHttpInfo($job_id, $job_update_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobUpdateWithHttpInfo($job_id, $job_update_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'job_id' is set
         if ($job_id === null) {

@@ -101,7 +101,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function poolAdd($pool, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function poolAdd($pool, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->poolAddWithHttpInfo($pool, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -121,7 +121,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function poolAddWithHttpInfo($pool, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function poolAddWithHttpInfo($pool, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'pool' is set
         if ($pool === null) {
@@ -221,7 +221,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function poolDelete($pool_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function poolDelete($pool_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->poolDeleteWithHttpInfo($pool_id, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -245,7 +245,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function poolDeleteWithHttpInfo($pool_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function poolDeleteWithHttpInfo($pool_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -360,7 +360,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function poolDisableAutoScale($pool_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function poolDisableAutoScale($pool_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->poolDisableAutoScaleWithHttpInfo($pool_id, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -380,7 +380,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function poolDisableAutoScaleWithHttpInfo($pool_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function poolDisableAutoScaleWithHttpInfo($pool_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -484,7 +484,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function poolEnableAutoScale($pool_id, $pool_enable_auto_scale_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function poolEnableAutoScale($pool_id, $pool_enable_auto_scale_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->poolEnableAutoScaleWithHttpInfo($pool_id, $pool_enable_auto_scale_parameter, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -509,7 +509,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function poolEnableAutoScaleWithHttpInfo($pool_id, $pool_enable_auto_scale_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function poolEnableAutoScaleWithHttpInfo($pool_id, $pool_enable_auto_scale_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -634,7 +634,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\AutoScaleRun
      */
-    public function poolEvaluateAutoScale($pool_id, $pool_evaluate_auto_scale_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function poolEvaluateAutoScale($pool_id, $pool_evaluate_auto_scale_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->poolEvaluateAutoScaleWithHttpInfo($pool_id, $pool_evaluate_auto_scale_parameter, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -655,7 +655,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\AutoScaleRun, HTTP status code, HTTP response headers (array of strings)
      */
-    public function poolEvaluateAutoScaleWithHttpInfo($pool_id, $pool_evaluate_auto_scale_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function poolEvaluateAutoScaleWithHttpInfo($pool_id, $pool_evaluate_auto_scale_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -771,7 +771,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function poolExists($pool_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function poolExists($pool_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->poolExistsWithHttpInfo($pool_id, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -795,7 +795,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function poolExistsWithHttpInfo($pool_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function poolExistsWithHttpInfo($pool_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -916,7 +916,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\CloudPool
      */
-    public function poolGet($pool_id, $api_version, $select = null, $expand = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function poolGet($pool_id, $api_version = Version::NAME, $select = null, $expand = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->poolGetWithHttpInfo($pool_id, $api_version, $select, $expand, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -942,7 +942,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\CloudPool, HTTP status code, HTTP response headers (array of strings)
      */
-    public function poolGetWithHttpInfo($pool_id, $api_version, $select = null, $expand = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function poolGetWithHttpInfo($pool_id, $api_version = Version::NAME, $select = null, $expand = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -1068,7 +1068,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\PoolStatistics
      */
-    public function poolGetAllPoolsLifetimeStatistics($api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function poolGetAllPoolsLifetimeStatistics($api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->poolGetAllPoolsLifetimeStatisticsWithHttpInfo($api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -1087,7 +1087,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\PoolStatistics, HTTP status code, HTTP response headers (array of strings)
      */
-    public function poolGetAllPoolsLifetimeStatisticsWithHttpInfo($api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function poolGetAllPoolsLifetimeStatisticsWithHttpInfo($api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'api_version' is set
         if ($api_version === null) {
@@ -1181,7 +1181,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\CloudPoolListResult
      */
-    public function poolList($api_version, $filter = null, $select = null, $expand = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function poolList($api_version = Version::NAME, $filter = null, $select = null, $expand = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->poolListWithHttpInfo($api_version, $filter, $select, $expand, $maxresults, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -1204,7 +1204,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\CloudPoolListResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function poolListWithHttpInfo($api_version, $filter = null, $select = null, $expand = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function poolListWithHttpInfo($api_version = Version::NAME, $filter = null, $select = null, $expand = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'api_version' is set
         if ($api_version === null) {
@@ -1321,7 +1321,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\PoolListPoolUsageMetricsResult
      */
-    public function poolListPoolUsageMetrics($api_version, $starttime = null, $endtime = null, $filter = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function poolListPoolUsageMetrics($api_version = Version::NAME, $starttime = null, $endtime = null, $filter = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->poolListPoolUsageMetricsWithHttpInfo($api_version, $starttime, $endtime, $filter, $maxresults, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -1344,7 +1344,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\PoolListPoolUsageMetricsResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function poolListPoolUsageMetricsWithHttpInfo($api_version, $starttime = null, $endtime = null, $filter = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function poolListPoolUsageMetricsWithHttpInfo($api_version = Version::NAME, $starttime = null, $endtime = null, $filter = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'api_version' is set
         if ($api_version === null) {
@@ -1463,7 +1463,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function poolPatch($pool_id, $pool_patch_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function poolPatch($pool_id, $pool_patch_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->poolPatchWithHttpInfo($pool_id, $pool_patch_parameter, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -1488,7 +1488,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function poolPatchWithHttpInfo($pool_id, $pool_patch_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function poolPatchWithHttpInfo($pool_id, $pool_patch_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -1617,7 +1617,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function poolResize($pool_id, $pool_resize_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function poolResize($pool_id, $pool_resize_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->poolResizeWithHttpInfo($pool_id, $pool_resize_parameter, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -1642,7 +1642,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function poolResizeWithHttpInfo($pool_id, $pool_resize_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function poolResizeWithHttpInfo($pool_id, $pool_resize_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -1770,7 +1770,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function poolStopResize($pool_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function poolStopResize($pool_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->poolStopResizeWithHttpInfo($pool_id, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -1794,7 +1794,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function poolStopResizeWithHttpInfo($pool_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function poolStopResizeWithHttpInfo($pool_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -1910,7 +1910,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function poolUpdateProperties($pool_id, $pool_update_properties_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function poolUpdateProperties($pool_id, $pool_update_properties_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->poolUpdatePropertiesWithHttpInfo($pool_id, $pool_update_properties_parameter, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -1931,7 +1931,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function poolUpdatePropertiesWithHttpInfo($pool_id, $pool_update_properties_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function poolUpdatePropertiesWithHttpInfo($pool_id, $pool_update_properties_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -2044,7 +2044,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function poolUpgradeOS($pool_id, $pool_upgrade_os_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function poolUpgradeOS($pool_id, $pool_upgrade_os_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->poolUpgradeOSWithHttpInfo($pool_id, $pool_upgrade_os_parameter, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -2069,7 +2069,7 @@ class PoolsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function poolUpgradeOSWithHttpInfo($pool_id, $pool_upgrade_os_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function poolUpgradeOSWithHttpInfo($pool_id, $pool_upgrade_os_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {

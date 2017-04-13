@@ -103,7 +103,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function computeNodeAddUser($pool_id, $node_id, $user, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function computeNodeAddUser($pool_id, $node_id, $user, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->computeNodeAddUserWithHttpInfo($pool_id, $node_id, $user, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -125,7 +125,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function computeNodeAddUserWithHttpInfo($pool_id, $node_id, $user, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function computeNodeAddUserWithHttpInfo($pool_id, $node_id, $user, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -247,7 +247,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function computeNodeDeleteUser($pool_id, $node_id, $user_name, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function computeNodeDeleteUser($pool_id, $node_id, $user_name, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->computeNodeDeleteUserWithHttpInfo($pool_id, $node_id, $user_name, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -269,7 +269,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function computeNodeDeleteUserWithHttpInfo($pool_id, $node_id, $user_name, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function computeNodeDeleteUserWithHttpInfo($pool_id, $node_id, $user_name, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -394,7 +394,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function computeNodeDisableScheduling($pool_id, $node_id, $api_version, $node_disable_scheduling_parameter = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function computeNodeDisableScheduling($pool_id, $node_id, $api_version = Version::NAME, $node_disable_scheduling_parameter = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->computeNodeDisableSchedulingWithHttpInfo($pool_id, $node_id, $api_version, $node_disable_scheduling_parameter, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -416,7 +416,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function computeNodeDisableSchedulingWithHttpInfo($pool_id, $node_id, $api_version, $node_disable_scheduling_parameter = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function computeNodeDisableSchedulingWithHttpInfo($pool_id, $node_id, $api_version = Version::NAME, $node_disable_scheduling_parameter = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -533,7 +533,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function computeNodeEnableScheduling($pool_id, $node_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function computeNodeEnableScheduling($pool_id, $node_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->computeNodeEnableSchedulingWithHttpInfo($pool_id, $node_id, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -554,7 +554,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function computeNodeEnableSchedulingWithHttpInfo($pool_id, $node_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function computeNodeEnableSchedulingWithHttpInfo($pool_id, $node_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -667,7 +667,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\ComputeNode
      */
-    public function computeNodeGet($pool_id, $node_id, $api_version, $select = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function computeNodeGet($pool_id, $node_id, $api_version = Version::NAME, $select = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->computeNodeGetWithHttpInfo($pool_id, $node_id, $api_version, $select, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -689,7 +689,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\ComputeNode, HTTP status code, HTTP response headers (array of strings)
      */
-    public function computeNodeGetWithHttpInfo($pool_id, $node_id, $api_version, $select = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function computeNodeGetWithHttpInfo($pool_id, $node_id, $api_version = Version::NAME, $select = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -809,7 +809,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \SplFileObject
      */
-    public function computeNodeGetRemoteDesktop($pool_id, $node_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function computeNodeGetRemoteDesktop($pool_id, $node_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->computeNodeGetRemoteDesktopWithHttpInfo($pool_id, $node_id, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -830,7 +830,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function computeNodeGetRemoteDesktopWithHttpInfo($pool_id, $node_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function computeNodeGetRemoteDesktopWithHttpInfo($pool_id, $node_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -946,7 +946,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\ComputeNodeGetRemoteLoginSettingsResult
      */
-    public function computeNodeGetRemoteLoginSettings($pool_id, $node_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function computeNodeGetRemoteLoginSettings($pool_id, $node_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->computeNodeGetRemoteLoginSettingsWithHttpInfo($pool_id, $node_id, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -967,7 +967,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\ComputeNodeGetRemoteLoginSettingsResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function computeNodeGetRemoteLoginSettingsWithHttpInfo($pool_id, $node_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function computeNodeGetRemoteLoginSettingsWithHttpInfo($pool_id, $node_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -1085,7 +1085,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\ComputeNodeListResult
      */
-    public function computeNodeList($pool_id, $api_version, $filter = null, $select = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function computeNodeList($pool_id, $api_version = Version::NAME, $filter = null, $select = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->computeNodeListWithHttpInfo($pool_id, $api_version, $filter, $select, $maxresults, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -1108,7 +1108,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\ComputeNodeListResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function computeNodeListWithHttpInfo($pool_id, $api_version, $filter = null, $select = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function computeNodeListWithHttpInfo($pool_id, $api_version = Version::NAME, $filter = null, $select = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -1232,7 +1232,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function computeNodeReboot($pool_id, $node_id, $api_version, $node_reboot_parameter = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function computeNodeReboot($pool_id, $node_id, $api_version = Version::NAME, $node_reboot_parameter = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->computeNodeRebootWithHttpInfo($pool_id, $node_id, $api_version, $node_reboot_parameter, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -1254,7 +1254,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function computeNodeRebootWithHttpInfo($pool_id, $node_id, $api_version, $node_reboot_parameter = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function computeNodeRebootWithHttpInfo($pool_id, $node_id, $api_version = Version::NAME, $node_reboot_parameter = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -1372,7 +1372,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function computeNodeReimage($pool_id, $node_id, $api_version, $node_reimage_parameter = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function computeNodeReimage($pool_id, $node_id, $api_version = Version::NAME, $node_reimage_parameter = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->computeNodeReimageWithHttpInfo($pool_id, $node_id, $api_version, $node_reimage_parameter, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -1394,7 +1394,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function computeNodeReimageWithHttpInfo($pool_id, $node_id, $api_version, $node_reimage_parameter = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function computeNodeReimageWithHttpInfo($pool_id, $node_id, $api_version = Version::NAME, $node_reimage_parameter = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -1513,7 +1513,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function computeNodeUpdateUser($pool_id, $node_id, $user_name, $node_update_user_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function computeNodeUpdateUser($pool_id, $node_id, $user_name, $node_update_user_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->computeNodeUpdateUserWithHttpInfo($pool_id, $node_id, $user_name, $node_update_user_parameter, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -1536,7 +1536,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function computeNodeUpdateUserWithHttpInfo($pool_id, $node_id, $user_name, $node_update_user_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function computeNodeUpdateUserWithHttpInfo($pool_id, $node_id, $user_name, $node_update_user_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -1673,7 +1673,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function poolRemoveNodes($pool_id, $node_remove_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function poolRemoveNodes($pool_id, $node_remove_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->poolRemoveNodesWithHttpInfo($pool_id, $node_remove_parameter, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -1698,7 +1698,7 @@ class ComputeNodesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function poolRemoveNodesWithHttpInfo($pool_id, $node_remove_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function poolRemoveNodesWithHttpInfo($pool_id, $node_remove_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {

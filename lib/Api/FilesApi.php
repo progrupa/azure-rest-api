@@ -104,7 +104,7 @@ class FilesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function fileDeleteFromComputeNode($pool_id, $node_id, $file_name, $api_version, $recursive = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function fileDeleteFromComputeNode($pool_id, $node_id, $file_name, $api_version = Version::NAME, $recursive = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->fileDeleteFromComputeNodeWithHttpInfo($pool_id, $node_id, $file_name, $api_version, $recursive, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -127,7 +127,7 @@ class FilesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fileDeleteFromComputeNodeWithHttpInfo($pool_id, $node_id, $file_name, $api_version, $recursive = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function fileDeleteFromComputeNodeWithHttpInfo($pool_id, $node_id, $file_name, $api_version = Version::NAME, $recursive = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -257,7 +257,7 @@ class FilesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function fileDeleteFromTask($job_id, $task_id, $file_name, $api_version, $recursive = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function fileDeleteFromTask($job_id, $task_id, $file_name, $api_version = Version::NAME, $recursive = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->fileDeleteFromTaskWithHttpInfo($job_id, $task_id, $file_name, $api_version, $recursive, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -280,7 +280,7 @@ class FilesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fileDeleteFromTaskWithHttpInfo($job_id, $task_id, $file_name, $api_version, $recursive = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function fileDeleteFromTaskWithHttpInfo($job_id, $task_id, $file_name, $api_version = Version::NAME, $recursive = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'job_id' is set
         if ($job_id === null) {
@@ -412,7 +412,7 @@ class FilesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \SplFileObject
      */
-    public function fileGetFromComputeNode($pool_id, $node_id, $file_name, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $ocp_range = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function fileGetFromComputeNode($pool_id, $node_id, $file_name, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $ocp_range = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->fileGetFromComputeNodeWithHttpInfo($pool_id, $node_id, $file_name, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $ocp_range, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -437,7 +437,7 @@ class FilesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fileGetFromComputeNodeWithHttpInfo($pool_id, $node_id, $file_name, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $ocp_range = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function fileGetFromComputeNodeWithHttpInfo($pool_id, $node_id, $file_name, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $ocp_range = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -581,7 +581,7 @@ class FilesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \SplFileObject
      */
-    public function fileGetFromTask($job_id, $task_id, $file_name, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $ocp_range = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function fileGetFromTask($job_id, $task_id, $file_name, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $ocp_range = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->fileGetFromTaskWithHttpInfo($job_id, $task_id, $file_name, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $ocp_range, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -606,7 +606,7 @@ class FilesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fileGetFromTaskWithHttpInfo($job_id, $task_id, $file_name, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $ocp_range = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function fileGetFromTaskWithHttpInfo($job_id, $task_id, $file_name, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $ocp_range = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'job_id' is set
         if ($job_id === null) {
@@ -749,7 +749,7 @@ class FilesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function fileGetNodeFilePropertiesFromComputeNode($pool_id, $node_id, $file_name, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function fileGetNodeFilePropertiesFromComputeNode($pool_id, $node_id, $file_name, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->fileGetNodeFilePropertiesFromComputeNodeWithHttpInfo($pool_id, $node_id, $file_name, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -773,7 +773,7 @@ class FilesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fileGetNodeFilePropertiesFromComputeNodeWithHttpInfo($pool_id, $node_id, $file_name, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function fileGetNodeFilePropertiesFromComputeNodeWithHttpInfo($pool_id, $node_id, $file_name, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -908,7 +908,7 @@ class FilesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function fileGetNodeFilePropertiesFromTask($job_id, $task_id, $file_name, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function fileGetNodeFilePropertiesFromTask($job_id, $task_id, $file_name, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->fileGetNodeFilePropertiesFromTaskWithHttpInfo($job_id, $task_id, $file_name, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -932,7 +932,7 @@ class FilesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fileGetNodeFilePropertiesFromTaskWithHttpInfo($job_id, $task_id, $file_name, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function fileGetNodeFilePropertiesFromTaskWithHttpInfo($job_id, $task_id, $file_name, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'job_id' is set
         if ($job_id === null) {
@@ -1067,7 +1067,7 @@ class FilesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\NodeFileListResult
      */
-    public function fileListFromComputeNode($pool_id, $node_id, $api_version, $filter = null, $recursive = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function fileListFromComputeNode($pool_id, $node_id, $api_version = Version::NAME, $filter = null, $recursive = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->fileListFromComputeNodeWithHttpInfo($pool_id, $node_id, $api_version, $filter, $recursive, $maxresults, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -1091,7 +1091,7 @@ class FilesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\NodeFileListResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fileListFromComputeNodeWithHttpInfo($pool_id, $node_id, $api_version, $filter = null, $recursive = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function fileListFromComputeNodeWithHttpInfo($pool_id, $node_id, $api_version = Version::NAME, $filter = null, $recursive = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'pool_id' is set
         if ($pool_id === null) {
@@ -1229,7 +1229,7 @@ class FilesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\NodeFileListResult
      */
-    public function fileListFromTask($job_id, $task_id, $api_version, $filter = null, $recursive = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function fileListFromTask($job_id, $task_id, $api_version = Version::NAME, $filter = null, $recursive = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->fileListFromTaskWithHttpInfo($job_id, $task_id, $api_version, $filter, $recursive, $maxresults, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -1253,7 +1253,7 @@ class FilesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\NodeFileListResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function fileListFromTaskWithHttpInfo($job_id, $task_id, $api_version, $filter = null, $recursive = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function fileListFromTaskWithHttpInfo($job_id, $task_id, $api_version = Version::NAME, $filter = null, $recursive = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'job_id' is set
         if ($job_id === null) {

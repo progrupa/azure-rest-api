@@ -101,7 +101,7 @@ class CertificatesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function certificateAdd($certificate, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function certificateAdd($certificate, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->certificateAddWithHttpInfo($certificate, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -121,7 +121,7 @@ class CertificatesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function certificateAddWithHttpInfo($certificate, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function certificateAddWithHttpInfo($certificate, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'certificate' is set
         if ($certificate === null) {
@@ -218,7 +218,7 @@ class CertificatesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function certificateCancelDeletion($thumbprint_algorithm, $thumbprint, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function certificateCancelDeletion($thumbprint_algorithm, $thumbprint, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->certificateCancelDeletionWithHttpInfo($thumbprint_algorithm, $thumbprint, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -239,7 +239,7 @@ class CertificatesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function certificateCancelDeletionWithHttpInfo($thumbprint_algorithm, $thumbprint, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function certificateCancelDeletionWithHttpInfo($thumbprint_algorithm, $thumbprint, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'thumbprint_algorithm' is set
         if ($thumbprint_algorithm === null) {
@@ -351,7 +351,7 @@ class CertificatesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function certificateDelete($thumbprint_algorithm, $thumbprint, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function certificateDelete($thumbprint_algorithm, $thumbprint, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->certificateDeleteWithHttpInfo($thumbprint_algorithm, $thumbprint, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -372,7 +372,7 @@ class CertificatesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function certificateDeleteWithHttpInfo($thumbprint_algorithm, $thumbprint, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function certificateDeleteWithHttpInfo($thumbprint_algorithm, $thumbprint, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'thumbprint_algorithm' is set
         if ($thumbprint_algorithm === null) {
@@ -485,7 +485,7 @@ class CertificatesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\Certificate
      */
-    public function certificateGet($thumbprint_algorithm, $thumbprint, $api_version, $select = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function certificateGet($thumbprint_algorithm, $thumbprint, $api_version = Version::NAME, $select = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->certificateGetWithHttpInfo($thumbprint_algorithm, $thumbprint, $api_version, $select, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -507,7 +507,7 @@ class CertificatesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\Certificate, HTTP status code, HTTP response headers (array of strings)
      */
-    public function certificateGetWithHttpInfo($thumbprint_algorithm, $thumbprint, $api_version, $select = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function certificateGetWithHttpInfo($thumbprint_algorithm, $thumbprint, $api_version = Version::NAME, $select = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'thumbprint_algorithm' is set
         if ($thumbprint_algorithm === null) {
@@ -628,7 +628,7 @@ class CertificatesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\CertificateListResult
      */
-    public function certificateList($api_version, $filter = null, $select = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function certificateList($api_version = Version::NAME, $filter = null, $select = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->certificateListWithHttpInfo($api_version, $filter, $select, $maxresults, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -650,7 +650,7 @@ class CertificatesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\CertificateListResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function certificateListWithHttpInfo($api_version, $filter = null, $select = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function certificateListWithHttpInfo($api_version = Version::NAME, $filter = null, $select = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'api_version' is set
         if ($api_version === null) {

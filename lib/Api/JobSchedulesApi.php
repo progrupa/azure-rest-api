@@ -101,7 +101,7 @@ class JobSchedulesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function jobScheduleAdd($cloud_job_schedule, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function jobScheduleAdd($cloud_job_schedule, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->jobScheduleAddWithHttpInfo($cloud_job_schedule, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -121,7 +121,7 @@ class JobSchedulesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function jobScheduleAddWithHttpInfo($cloud_job_schedule, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function jobScheduleAddWithHttpInfo($cloud_job_schedule, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'cloud_job_schedule' is set
         if ($cloud_job_schedule === null) {
@@ -221,7 +221,7 @@ class JobSchedulesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function jobScheduleDelete($job_schedule_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobScheduleDelete($job_schedule_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->jobScheduleDeleteWithHttpInfo($job_schedule_id, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -245,7 +245,7 @@ class JobSchedulesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function jobScheduleDeleteWithHttpInfo($job_schedule_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobScheduleDeleteWithHttpInfo($job_schedule_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'job_schedule_id' is set
         if ($job_schedule_id === null) {
@@ -364,7 +364,7 @@ class JobSchedulesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function jobScheduleDisable($job_schedule_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobScheduleDisable($job_schedule_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->jobScheduleDisableWithHttpInfo($job_schedule_id, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -388,7 +388,7 @@ class JobSchedulesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function jobScheduleDisableWithHttpInfo($job_schedule_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobScheduleDisableWithHttpInfo($job_schedule_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'job_schedule_id' is set
         if ($job_schedule_id === null) {
@@ -507,7 +507,7 @@ class JobSchedulesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function jobScheduleEnable($job_schedule_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobScheduleEnable($job_schedule_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->jobScheduleEnableWithHttpInfo($job_schedule_id, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -531,7 +531,7 @@ class JobSchedulesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function jobScheduleEnableWithHttpInfo($job_schedule_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobScheduleEnableWithHttpInfo($job_schedule_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'job_schedule_id' is set
         if ($job_schedule_id === null) {
@@ -650,7 +650,7 @@ class JobSchedulesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function jobScheduleExists($job_schedule_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobScheduleExists($job_schedule_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->jobScheduleExistsWithHttpInfo($job_schedule_id, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -674,7 +674,7 @@ class JobSchedulesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function jobScheduleExistsWithHttpInfo($job_schedule_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobScheduleExistsWithHttpInfo($job_schedule_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'job_schedule_id' is set
         if ($job_schedule_id === null) {
@@ -795,7 +795,7 @@ class JobSchedulesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\CloudJobSchedule
      */
-    public function jobScheduleGet($job_schedule_id, $api_version, $select = null, $expand = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobScheduleGet($job_schedule_id, $api_version = Version::NAME, $select = null, $expand = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->jobScheduleGetWithHttpInfo($job_schedule_id, $api_version, $select, $expand, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -821,7 +821,7 @@ class JobSchedulesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\CloudJobSchedule, HTTP status code, HTTP response headers (array of strings)
      */
-    public function jobScheduleGetWithHttpInfo($job_schedule_id, $api_version, $select = null, $expand = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobScheduleGetWithHttpInfo($job_schedule_id, $api_version = Version::NAME, $select = null, $expand = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'job_schedule_id' is set
         if ($job_schedule_id === null) {
@@ -951,7 +951,7 @@ class JobSchedulesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\CloudJobScheduleListResult
      */
-    public function jobScheduleList($api_version, $filter = null, $select = null, $expand = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function jobScheduleList($api_version = Version::NAME, $filter = null, $select = null, $expand = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->jobScheduleListWithHttpInfo($api_version, $filter, $select, $expand, $maxresults, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -974,7 +974,7 @@ class JobSchedulesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\CloudJobScheduleListResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function jobScheduleListWithHttpInfo($api_version, $filter = null, $select = null, $expand = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function jobScheduleListWithHttpInfo($api_version = Version::NAME, $filter = null, $select = null, $expand = null, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'api_version' is set
         if ($api_version === null) {
@@ -1093,7 +1093,7 @@ class JobSchedulesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function jobSchedulePatch($job_schedule_id, $job_schedule_patch_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobSchedulePatch($job_schedule_id, $job_schedule_patch_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->jobSchedulePatchWithHttpInfo($job_schedule_id, $job_schedule_patch_parameter, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -1118,7 +1118,7 @@ class JobSchedulesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function jobSchedulePatchWithHttpInfo($job_schedule_id, $job_schedule_patch_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobSchedulePatchWithHttpInfo($job_schedule_id, $job_schedule_patch_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'job_schedule_id' is set
         if ($job_schedule_id === null) {
@@ -1246,7 +1246,7 @@ class JobSchedulesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function jobScheduleTerminate($job_schedule_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobScheduleTerminate($job_schedule_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->jobScheduleTerminateWithHttpInfo($job_schedule_id, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -1270,7 +1270,7 @@ class JobSchedulesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function jobScheduleTerminateWithHttpInfo($job_schedule_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobScheduleTerminateWithHttpInfo($job_schedule_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'job_schedule_id' is set
         if ($job_schedule_id === null) {
@@ -1390,7 +1390,7 @@ class JobSchedulesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return void
      */
-    public function jobScheduleUpdate($job_schedule_id, $job_schedule_update_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobScheduleUpdate($job_schedule_id, $job_schedule_update_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         list($response) = $this->jobScheduleUpdateWithHttpInfo($job_schedule_id, $job_schedule_update_parameter, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date, $if_match, $if_none_match, $if_modified_since, $if_unmodified_since);
         return $response;
@@ -1415,7 +1415,7 @@ class JobSchedulesApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
-    public function jobScheduleUpdateWithHttpInfo($job_schedule_id, $job_schedule_update_parameter, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
+    public function jobScheduleUpdateWithHttpInfo($job_schedule_id, $job_schedule_update_parameter, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null, $if_match = null, $if_none_match = null, $if_modified_since = null, $if_unmodified_since = null)
     {
         // verify the required parameter 'job_schedule_id' is set
         if ($job_schedule_id === null) {

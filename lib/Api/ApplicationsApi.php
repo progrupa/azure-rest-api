@@ -101,7 +101,7 @@ class ApplicationsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\ApplicationSummary
      */
-    public function applicationGet($application_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function applicationGet($application_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->applicationGetWithHttpInfo($application_id, $api_version, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -121,7 +121,7 @@ class ApplicationsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\ApplicationSummary, HTTP status code, HTTP response headers (array of strings)
      */
-    public function applicationGetWithHttpInfo($application_id, $api_version, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function applicationGetWithHttpInfo($application_id, $api_version = Version::NAME, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'application_id' is set
         if ($application_id === null) {
@@ -224,7 +224,7 @@ class ApplicationsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return \Progrupa\Azure\Model\ApplicationListResult
      */
-    public function applicationList($api_version, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function applicationList($api_version = Version::NAME, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         list($response) = $this->applicationListWithHttpInfo($api_version, $maxresults, $timeout, $client_request_id, $return_client_request_id, $ocp_date);
         return $response;
@@ -244,7 +244,7 @@ class ApplicationsApi
      * @throws \Progrupa\Azure\ApiException on non-2xx response
      * @return array of \Progrupa\Azure\Model\ApplicationListResult, HTTP status code, HTTP response headers (array of strings)
      */
-    public function applicationListWithHttpInfo($api_version, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
+    public function applicationListWithHttpInfo($api_version = Version::NAME, $maxresults = null, $timeout = null, $client_request_id = null, $return_client_request_id = null, $ocp_date = null)
     {
         // verify the required parameter 'api_version' is set
         if ($api_version === null) {
