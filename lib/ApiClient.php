@@ -5,7 +5,10 @@ namespace Progrupa\Azure;
 
 use GuzzleHttp\ClientInterface;
 use GuzzleHttp\Exception\RequestException;
+use GuzzleHttp\HandlerStack;
+use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Request;
+use Psr\Http\Message\RequestInterface;
 
 class ApiClient extends AbstractApiClient
 {
@@ -49,7 +52,9 @@ class ApiClient extends AbstractApiClient
             }
         }
 
-        $request = $this->addAuthorization($queryParams, $request);
+        /** @var HandlerStack $stack */
+        $stack = $this->http->getConfig('handler');
+        $stack->after('prepare_body', Middleware::mapRequest([$this, 'addAuthorization']), 'add_authorization');
 
         try {
             $response = $this->http->send($request, $options);
@@ -97,13 +102,13 @@ class ApiClient extends AbstractApiClient
      * @param $request
      * @return Request
      */
-    protected function addAuthorization($queryParams, Request $request)
+    public function addAuthorization(RequestInterface $request)
     {
         /** @var Request $request */
         $request = $request->withAddedHeader('ocp-date', gmdate('D, d M Y H:i:s T'));
 
         $canonicalizedHeaders = $this->prepareCanonicalizedHeaders($request);
-        $canonicalizedResource = $this->prepareCanonicalizedResource($request, $queryParams);
+        $canonicalizedResource = $this->prepareCanonicalizedResource($request);
 
         $signature = sprintf(
             "%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s",
@@ -156,11 +161,23 @@ class ApiClient extends AbstractApiClient
         return trim($canonicalizedHeaders);
     }
 
-    protected function prepareCanonicalizedResource(Request $request, array $parameters = [])
+    protected function prepareCanonicalizedResource(Request $request)
     {
         $uri = $request->getUri();
 
         $path = ltrim($uri->getPath(), '/');
+
+        if ($uri->getQuery()) {
+            $parametersRaw = explode("&", urldecode($uri->getQuery()));
+            $parameters = [];
+
+            foreach ($parametersRaw as $value) {
+                $v = explode('=', $value);
+                $parameters[$v[0]] = count($v) > 1 ? $v[1] : '1';
+            }
+        } else {
+            $parameters = [];
+        }
 
         $preppedParameters = '';
         if (count($parameters)) {
