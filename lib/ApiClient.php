@@ -8,16 +8,14 @@ use GuzzleHttp\Exception\RequestException;
 use GuzzleHttp\HandlerStack;
 use GuzzleHttp\Middleware;
 use GuzzleHttp\Psr7\Request;
+use Progrupa\Azure\Authentication\AuthenticationPluginInterface;
+use Progrupa\Azure\Authentication\SharedKeyPlugin;
 use Psr\Http\Message\RequestInterface;
 
 class ApiClient extends AbstractApiClient
 {
     /** @var  ClientInterface */
     private $http;
-    /** @var  string */
-    private $azureAccount;
-    /** @var  string */
-    private $azureKey;
 
     /**
      * ApiClient constructor.
@@ -25,12 +23,11 @@ class ApiClient extends AbstractApiClient
      * @param string $azureAccount
      * @param string $azureKey
      */
-    public function __construct(Configuration $configuration, ClientInterface $http, $azureAccount, $azureKey)
+    public function __construct(Configuration $configuration, ClientInterface $http, AuthenticationPluginInterface $authenticationPlugin)
     {
         parent::__construct($configuration);
         $this->http = $http;
-        $this->azureAccount = $azureAccount;
-        $this->azureKey = $azureKey;
+        $authenticationPlugin->attach($this->http);
     }
 
     public function callApi($resourcePath, $method, $queryParams, $postData, $headerParams, $responseType = null, $endpointPath = null)
@@ -52,9 +49,6 @@ class ApiClient extends AbstractApiClient
             }
         }
 
-        /** @var HandlerStack $stack */
-        $stack = $this->http->getConfig('handler');
-        $stack->after('prepare_body', Middleware::mapRequest([$this, 'addAuthorization']), 'add_authorization');
 
         try {
             $response = $this->http->send($request, $options);
@@ -95,108 +89,6 @@ class ApiClient extends AbstractApiClient
         }
 
         return [$data, $http_status_code, $http_header];
-    }
-
-    /**
-     * @param $queryParams
-     * @param $request
-     * @return Request
-     */
-    public function addAuthorization(RequestInterface $request)
-    {
-        /** @var Request $request */
-        $request = $request->withAddedHeader('ocp-date', gmdate('D, d M Y H:i:s T'));
-
-        $canonicalizedHeaders = $this->prepareCanonicalizedHeaders($request);
-        $canonicalizedResource = $this->prepareCanonicalizedResource($request);
-
-        $signature = sprintf(
-            "%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s",
-            strtoupper($request->getMethod()),
-            implode(',', $request->getHeader('Content-Encoding')),
-            implode(',', $request->getHeader('Content-Language')),
-            implode(',', $request->getHeader('Content-Length')),
-            implode(',', $request->getHeader('Content-MD5')),
-            implode(',', $request->getHeader('Content-Type')),
-            implode(',', $request->getHeader('Date')),
-            implode(',', $request->getHeader('If-Modified-Since')),
-            implode(',', $request->getHeader('If-Match')),
-            implode(',', $request->getHeader('If-None-Match')),
-            implode(',', $request->getHeader('If-Unmodified-Since')),
-            implode(',', $request->getHeader('Range')),
-            trim($canonicalizedHeaders),
-            trim($canonicalizedResource)
-        );
-
-        $hmac = hash_hmac('sha256', $signature, base64_decode($this->azureKey), true);
-        /** @var Request $request */
-        $request = $request->withAddedHeader(
-            'Authorization',
-            sprintf("SharedKey %s:%s", $this->azureAccount, base64_encode($hmac))
-        );
-
-        return $request;
-    }
-
-    /**
-     * @param Request $request
-     * @return array|string
-     */
-    protected function prepareCanonicalizedHeaders(Request $request)
-    {
-        $canonicalizedHeaders = '';
-        $headers = $request->getHeaders();
-        $preppedHeaders = [];
-        foreach ($headers as $header => $value) {
-            $preppedHeaders[strtolower($header)] = $value;
-        }
-        ksort($preppedHeaders);
-
-        foreach ($preppedHeaders as $header => $value) {
-            if (0 === strpos($header, 'ocp-')) {
-                $canonicalizedHeaders .= sprintf("%s:%s\n", trim($header), trim(implode(',', $value)));
-            }
-        }
-
-        return trim($canonicalizedHeaders);
-    }
-
-    protected function prepareCanonicalizedResource(Request $request)
-    {
-        $uri = $request->getUri();
-
-        $path = ltrim($uri->getPath(), '/');
-
-        if ($uri->getQuery()) {
-            $parametersRaw = explode("&", urldecode($uri->getQuery()));
-            $parameters = [];
-
-            foreach ($parametersRaw as $value) {
-                $v = explode('=', $value);
-                $parameters[$v[0]] = count($v) > 1 ? $v[1] : '1';
-            }
-        } else {
-            $parameters = [];
-        }
-
-        $preppedParameters = '';
-        if (count($parameters)) {
-            foreach ($parameters as $name => $value) {
-                $queryParameters[strtolower($name)] = trim(urldecode(is_array($value) ? implode(',', $value): $value));
-            }
-            ksort($queryParameters);
-
-            foreach ($queryParameters as $header => $value) {
-                $preppedParameters .= sprintf("%s:%s\n", $header, is_array($value) ? implode(',', $value) : $value);
-            }
-        }
-
-        return sprintf(
-            "/%s/%s\n%s",
-            strtolower($this->azureAccount),
-            $path,
-            trim($preppedParameters)
-        );
     }
 
     private function convertToMultipart($data)
