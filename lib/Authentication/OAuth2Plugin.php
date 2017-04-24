@@ -19,19 +19,33 @@ class OAuth2Plugin implements AuthenticationPluginInterface
     private $applicationId;
     /** @var  string */
     private $applicationKey;
+    /** @var  string */
+    private $applicationRedirectUrl;
+    /** @var  string */
+    private $applicationResourceUrl;
 
     /**
      * OAuth2Plugin constructor.
      * @param string $tenant
      * @param string $applicationId
      * @param string $applicationKey
+     * @param string $applicationRedirectUrl
+     * @param string $applicationResourceUrl
      */
-    public function __construct($tenant, $applicationId, $applicationKey)
-    {
+    public function __construct(
+        $tenant,
+        $applicationId,
+        $applicationKey,
+        $applicationRedirectUrl,
+        $applicationResourceUrl
+    ) {
         $this->tenant = $tenant;
         $this->applicationId = $applicationId;
         $this->applicationKey = $applicationKey;
+        $this->applicationRedirectUrl = $applicationRedirectUrl;
+        $this->applicationResourceUrl = $applicationResourceUrl;
     }
+
 
     public function attach(ClientInterface $client)
     {
@@ -39,9 +53,9 @@ class OAuth2Plugin implements AuthenticationPluginInterface
             AuthorizationCode::CONFIG_CLIENT_ID => $this->applicationId,
             AuthorizationCode::CONFIG_CLIENT_SECRET => $this->applicationKey,
             AuthorizationCode::CONFIG_TOKEN_URL => sprintf('https://login.microsoftonline.com/%s/oauth2/token', $this->tenant),
-            AuthorizationCode::CONFIG_REDIRECT_URI => 'http://pms.dev',
+            AuthorizationCode::CONFIG_REDIRECT_URI => $this->applicationRedirectUrl,
             AuthorizationCode::CONFIG_AUTH_LOCATION => RequestOptions::BODY,
-            'resource' => 'https://dominikkasprzakprogrupa.onmicrosoft.com/c53f711c-ad4b-4e7f-8dbf-f3d917529cd8'
+            'resource' => $this->applicationResourceUrl,
         ];
 
         $tokenClient = new Client();
@@ -49,8 +63,11 @@ class OAuth2Plugin implements AuthenticationPluginInterface
         $refreshToken = new RefreshToken($tokenClient, $config);
         $middleware = new OAuthMiddleware($tokenClient, $token, $refreshToken);
 
+        $options = $client->getConfig('options');
+        $options['auth'] = 'oauth2';
+
         $stack = $client->getConfig('handler');
         $stack->push($middleware->onBefore());
-//        $stack->push($middleware->onFailure(5));
+        $stack->push($middleware->onFailure(5));
     }
 }
