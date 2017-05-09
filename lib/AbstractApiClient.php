@@ -148,10 +148,11 @@ abstract class AbstractApiClient implements ApiClientInterface
      */
     public function selectHeaderContentType($content_type)
     {
-        if (count($content_type) === 0 or (count($content_type) === 1 and $content_type[0] === '')) {
+        if (count($content_type) === 0 or (count($content_type) === 1 and $content_type[0] === '')) { //    empty content type
             return 'application/json';
-        } elseif (preg_grep("/application\/json/i", $content_type)) {
-            return 'application/json';
+        } elseif ($matching = preg_grep("/application\/json/i", $content_type)) {   // any element contains application/json
+            return implode(',', $matching);
+//            return 'application/json';
         } else {
             return implode(',', $content_type);
         }
